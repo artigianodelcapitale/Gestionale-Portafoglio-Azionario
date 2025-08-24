@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestionale Portafoglio – Cloud</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f1115;color:#eef;line-height:1.4;margin:0;padding:24px}
+    h1{font-size:22px;margin:0 0 8px}
+    .card{background:#171a21;border:1px solid #273042;border-radius:12px;padding:16px;margin:14px 0}
+    label{display:block;margin:8px 0 4px;color:#a9b3c7}
+    input,button,select,textarea{background:#0b0e13;color:#f1f5ff;border:1px solid #2a3447;border-radius:8px;padding:10px;font-size:14px}
+    button{cursor:pointer}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .row>div{flex:1 1 160px}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{border-bottom:1px solid #283345;padding:8px 6px;text-align:left}
+    th{color:#a9b3c7;font-weight:600}
+    .pos{color:#66e08a}.neg{color:#ff7b7b}
+    .muted{color:#8aa0b8;font-size:13px}
+    .pill{display:inline-block;background:#253045;border:1px solid #2e3b53;border-radius:999px;padding:4px 8px;font-size:12px;margin-right:6px}
+  </style>
+</head>
+<body>
+  <h1>📈 Gestionale Portafoglio – Modalità Cloud</h1>
+  <div class="muted">Questo file carica automaticamente <code>gestionale_dati.json</code> dalla stessa cartella del sito (GitHub Pages). Carica/aggiorna quel JSON nel repo e ricarica la pagina.</div>
+
+  <div class="card" id="summary">
+    <div class="row">
+      <div><div class="pill">Budget iniziale</div><div id="init">-</div></div>
+      <div><div class="pill">Obiettivo giornaliero (2%)</div><div id="daily">-</div></div>
+      <div><div class="pill">Obiettivo finale</div><div id="goal">-</div></div>
+      <div><div class="pill">Profitto totale</div><div id="pTot">-</div></div>
+      <div><div class="pill">Perdita totale</div><div id="lTot">-</div></div>
+      <div><div class="pill">Netto</div><div id="net">-</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <strong>Operazioni</strong>
+    <table id="tbl">
+      <thead><tr><th>Data</th><th>Strumento</th><th class="pos">Profitto</th><th class="neg">Perdita</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+  async function load() {
+    const url = new URL(window.location.href);
+    const jsonURL = url.origin + url.pathname.replace(/\/[^\/]*$/, '/') + 'gestionale_dati.json';
+    let data;
+    try {
+      const res = await fetch(jsonURL, {cache:'no-store'});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      data = await res.json();
+    } catch (e) {
+      document.querySelector('body').insertAdjacentHTML('beforeend',
+        '<div class="card" style="border-color:#5a2">⚠️ Impossibile caricare <code>gestionale_dati.json</code>. Carica il file nel repository e ricarica la pagina.<br>Errore: '+e.message+'</div>');
+      return;
+    }
+    const init = (data.initialBudget ?? 0);
+    const goal = (data.finalGoal ?? 2750);
+    const daily = +(init * 0.02).toFixed(2);
+    document.getElementById('init').textContent = '€ ' + init.toFixed(2);
+    document.getElementById('goal').textContent = '€ ' + goal.toFixed(2);
+    document.getElementById('daily').textContent = '€ ' + daily.toFixed(2);
+
+    const tbody = document.querySelector('#tbl tbody');
+    let p=0,l=0;
+    (data.trades||[]).sort((a,b)=>a.date.localeCompare(b.date)).forEach(t=>{
+      const tr=document.createElement('tr');
+      const pr = Number(t.profit||0);
+      const ls = Number(t.loss||0);
+      p += pr; l += ls;
+      tr.innerHTML = `<td>${t.date}</td><td>${t.desc||''}</td>
+        <td class="pos">${pr?('€ '+pr.toFixed(2)):'—'}</td>
+        <td class="neg">${ls?('€ '+ls.toFixed(2)):'—'}</td>`;
+      tbody.appendChild(tr);
+    });
+    document.getElementById('pTot').textContent = '€ ' + p.toFixed(2);
+    document.getElementById('lTot').textContent = '€ ' + l.toFixed(2);
+    const net = p - l;
+    document.getElementById('net').innerHTML = (net>=0?'<span class="pos">':'<span class="neg">') + '€ ' + net.toFixed(2) + '</span>';
+  }
+  load();
+  </script>
+</body>
+</html>

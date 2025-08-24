@@ -1,0 +1,1030 @@
+{
+  "initialBudget": 66.1,
+  "finalGoal": 2750,
+  "trades": [
+    {
+      "id": "f3907d12-3792-46a1-a638-b5c8085e49a0",
+      "date": "2025-08-04",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 1.34,
+      "loss": 0.0
+    },
+    {
+      "id": "e7623638-5802-4043-9816-82ef2f7ef18f",
+      "date": "2025-08-04",
+      "budget": null,
+      "desc": "US500",
+      "profit": 1.02,
+      "loss": 0.0
+    },
+    {
+      "id": "7a107a64-dc40-459c-a12d-50b86aa1d6b5",
+      "date": "2025-08-04",
+      "budget": null,
+      "desc": "US500",
+      "profit": 0.0,
+      "loss": 0.38
+    },
+    {
+      "id": "d3108928-c4a1-4399-a20c-1b02f1e43df9",
+      "date": "2025-08-05",
+      "budget": null,
+      "desc": "TTEF",
+      "profit": 2.01,
+      "loss": 0.0
+    },
+    {
+      "id": "1456a5e9-f726-4bda-8612-ad1a35bc8d0c",
+      "date": "2025-08-05",
+      "budget": null,
+      "desc": "PLTR",
+      "profit": 1.93,
+      "loss": 0.0
+    },
+    {
+      "id": "4b6f4233-c001-4e57-a3a0-547cdbe04ca0",
+      "date": "2025-08-05",
+      "budget": null,
+      "desc": "PFE",
+      "profit": 0.28,
+      "loss": 0.0
+    },
+    {
+      "id": "e939d87c-e049-43ea-adb2-a66d17fb1ba9",
+      "date": "2025-08-05",
+      "budget": null,
+      "desc": "INTC",
+      "profit": 0.0,
+      "loss": 0.91
+    },
+    {
+      "id": "fc005a46-adbc-4640-98cb-03c6b2c98a5b",
+      "date": "2025-08-05",
+      "budget": null,
+      "desc": "ENI",
+      "profit": 0.0,
+      "loss": 0.5
+    },
+    {
+      "id": "9fe3b3b9-aa38-4bea-b09a-5e6b80fd5742",
+      "date": "2025-08-05",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.0,
+      "loss": 0.25
+    },
+    {
+      "id": "d45e042f-5638-4e4f-b4bf-3f06d94ad0ad",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "PLTR",
+      "profit": 2.0,
+      "loss": 0.0
+    },
+    {
+      "id": "f3e93439-8edf-4f9e-b94d-263d74df7919",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "AMD",
+      "profit": 1.91,
+      "loss": 0.0
+    },
+    {
+      "id": "5597b4ce-300c-43e6-a870-12096154f5f2",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "US100",
+      "profit": 1.51,
+      "loss": 0.0
+    },
+    {
+      "id": "dd225dfe-7bb4-4fb2-bf6a-b66e584a476e",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "META",
+      "profit": 1.46,
+      "loss": 0.0
+    },
+    {
+      "id": "a8e59537-945b-4d31-a2ec-ee289f3b64a5",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "AMD",
+      "profit": 1.13,
+      "loss": 0.0
+    },
+    {
+      "id": "acd2403b-1f76-4938-9f56-5f6642a71a3b",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "US100",
+      "profit": 0.7,
+      "loss": 0.0
+    },
+    {
+      "id": "8f1651f1-ed19-451c-ac6c-3e262baead2b",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 0.23,
+      "loss": 0.0
+    },
+    {
+      "id": "370ad53e-59cc-4a44-a190-16b50fdc2466",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "UCG",
+      "profit": 0.07,
+      "loss": 0.0
+    },
+    {
+      "id": "01401110-0586-4731-9724-ce36d2096111",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "US100",
+      "profit": 0.07,
+      "loss": 0.0
+    },
+    {
+      "id": "98196e16-88be-471b-9050-7f58e4be4028",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "PLTR",
+      "profit": 0.03,
+      "loss": 0.0
+    },
+    {
+      "id": "f6ab693f-f38b-43a9-939d-3e80ec888227",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 0.02,
+      "loss": 0.0
+    },
+    {
+      "id": "23d42145-9799-429f-90b6-4036f8d1cfb7",
+      "date": "2025-08-06",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.11
+    },
+    {
+      "id": "cbaa628e-d2bf-49f9-bb23-5610cd0664b5",
+      "date": "2025-08-07",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 8.1,
+      "loss": 0.0
+    },
+    {
+      "id": "96e2c6aa-6914-4632-8225-4cf45856587b",
+      "date": "2025-08-07",
+      "budget": null,
+      "desc": "US500",
+      "profit": 3.01,
+      "loss": 0.0
+    },
+    {
+      "id": "8c20d291-98f3-4803-8ecd-f0ceaf1248bf",
+      "date": "2025-08-07",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 2.55,
+      "loss": 0.0
+    },
+    {
+      "id": "ccd068fd-4cd0-4653-a657-6aff412fcb97",
+      "date": "2025-08-07",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.01,
+      "loss": 0.0
+    },
+    {
+      "id": "5dcd2a0d-3586-4546-a436-726844a478f1",
+      "date": "2025-08-07",
+      "budget": null,
+      "desc": "US100",
+      "profit": 0.0,
+      "loss": 0.54
+    },
+    {
+      "id": "5e0b9b91-8a52-4e43-915f-72f3f3739b4a",
+      "date": "2025-08-07",
+      "budget": null,
+      "desc": "US30",
+      "profit": 0.0,
+      "loss": 0.45
+    },
+    {
+      "id": "3b19b272-e594-4143-b454-2735348abec5",
+      "date": "2025-08-08",
+      "budget": null,
+      "desc": "US100",
+      "profit": 1.39,
+      "loss": 0.0
+    },
+    {
+      "id": "474f2c01-7927-42dc-939a-6c074ae239ab",
+      "date": "2025-08-08",
+      "budget": null,
+      "desc": "US500",
+      "profit": 1.32,
+      "loss": 0.0
+    },
+    {
+      "id": "f35dbd36-056f-43d5-b328-b2b296776caa",
+      "date": "2025-08-08",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.1,
+      "loss": 0.0
+    },
+    {
+      "id": "799727d5-d589-497c-a200-624b93054e32",
+      "date": "2025-08-08",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.08,
+      "loss": 0.0
+    },
+    {
+      "id": "a628fc4f-c8b4-4e3e-a25b-36b929800afe",
+      "date": "2025-08-10",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.48,
+      "loss": 0.0
+    },
+    {
+      "id": "9dc7645c-d234-44aa-945d-4f5a8656403e",
+      "date": "2025-08-10",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.13,
+      "loss": 0.0
+    },
+    {
+      "id": "4d70563e-0da4-4042-b44f-726acbaa9280",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "SNE",
+      "profit": 1.33,
+      "loss": 0.0
+    },
+    {
+      "id": "f81794f4-e6d2-4642-a5f1-b2f8b7f8df33",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "META",
+      "profit": 1.15,
+      "loss": 0.0
+    },
+    {
+      "id": "981cb06f-6ce5-4250-8f90-b8813893221a",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.92,
+      "loss": 0.0
+    },
+    {
+      "id": "c47c8de7-153c-46e5-bc3d-aafa0bc72d4f",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "AAPL",
+      "profit": 0.92,
+      "loss": 0.0
+    },
+    {
+      "id": "8d0f733c-664d-4c59-ae22-a06d5a2a5743",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.9,
+      "loss": 0.0
+    },
+    {
+      "id": "351b76ca-54a1-4e15-8f1b-4d6bf04573d1",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.88,
+      "loss": 0.0
+    },
+    {
+      "id": "6ed1f7f5-9445-4640-b0ed-8fd5a5b6308a",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "US100",
+      "profit": 0.27,
+      "loss": 0.0
+    },
+    {
+      "id": "6b4ca322-3b25-4ddb-9355-f0e09848c42a",
+      "date": "2025-08-11",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 0.09,
+      "loss": 0.0
+    },
+    {
+      "id": "214eb26f-5194-4ed6-9235-749d28ede01a",
+      "date": "2025-08-12",
+      "budget": null,
+      "desc": "META",
+      "profit": 5.42,
+      "loss": 0.0
+    },
+    {
+      "id": "58217a3a-eb72-44be-9217-a03ab47f01ba",
+      "date": "2025-08-12",
+      "budget": null,
+      "desc": "AAPL",
+      "profit": 0.92,
+      "loss": 0.0
+    },
+    {
+      "id": "0b17b395-238f-491b-ba40-20e77ccb1185",
+      "date": "2025-08-12",
+      "budget": null,
+      "desc": "US100",
+      "profit": 0.33,
+      "loss": 0.0
+    },
+    {
+      "id": "29442cf3-576f-4267-b574-8c787a7f081d",
+      "date": "2025-08-13",
+      "budget": null,
+      "desc": "US100",
+      "profit": 0.79,
+      "loss": 0.0
+    },
+    {
+      "id": "6b876915-37c3-4872-a127-ff643f71dfcf",
+      "date": "2025-08-13",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.0,
+      "loss": 3.53
+    },
+    {
+      "id": "6e5c4cd9-28c5-4bc1-ae23-67521e91c4a3",
+      "date": "2025-08-14",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 3.02,
+      "loss": 0.0
+    },
+    {
+      "id": "1c0dc2c2-272f-4586-8a08-8d9bb4a9124c",
+      "date": "2025-08-14",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 1.92,
+      "loss": 0.0
+    },
+    {
+      "id": "3cc6e912-a350-416a-b761-2def3957a0f2",
+      "date": "2025-08-14",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 1.37,
+      "loss": 0.0
+    },
+    {
+      "id": "ac8029f9-6cf0-4ff1-9177-9f84e4bc1988",
+      "date": "2025-08-14",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 1.02,
+      "loss": 0.0
+    },
+    {
+      "id": "6cbdfdd1-d29b-450b-ae80-6c4939382bea",
+      "date": "2025-08-15",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 1.61,
+      "loss": 0.0
+    },
+    {
+      "id": "a364dd27-35f1-4070-90f6-d398baedf549",
+      "date": "2025-08-15",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 1.26,
+      "loss": 0.0
+    },
+    {
+      "id": "bbd6da60-e946-4a10-a59c-5fb06d17bf76",
+      "date": "2025-08-15",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 0.0,
+      "loss": 6.99
+    },
+    {
+      "id": "a9412c60-a2b4-41e8-8d66-55a19a13cf5d",
+      "date": "2025-08-15",
+      "budget": null,
+      "desc": "PLTR",
+      "profit": 0.0,
+      "loss": 6.01
+    },
+    {
+      "id": "4a91f24b-cc27-461a-ad94-c9871b13c082",
+      "date": "2025-08-15",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 4.88
+    },
+    {
+      "id": "817c6b77-d4f9-464f-adba-213ce83d8a11",
+      "date": "2025-08-15",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.0,
+      "loss": 2.5
+    },
+    {
+      "id": "d4412ba4-b14a-4fd1-bacf-a377653ddfa6",
+      "date": "2025-08-17",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 2.91,
+      "loss": 0.0
+    },
+    {
+      "id": "2567068c-e302-4c7a-8a89-3a397e149295",
+      "date": "2025-08-17",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.0,
+      "loss": 2.25
+    },
+    {
+      "id": "2ea62f5b-fbe9-4afe-b0bd-aca09bc92a7c",
+      "date": "2025-08-17",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.0,
+      "loss": 1.1
+    },
+    {
+      "id": "0de75c62-bb5b-497b-bc49-defed6b7ce24",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 2.71,
+      "loss": 0.0
+    },
+    {
+      "id": "b9caaf50-9f21-4731-8887-6dfea1f30fc8",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "UK100",
+      "profit": 1.66,
+      "loss": 0.0
+    },
+    {
+      "id": "e85f8e02-8c88-4e43-b119-54ce9a5c7afd",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 1.14,
+      "loss": 0.0
+    },
+    {
+      "id": "0a30fb86-8f48-4581-8bc9-787d4a70b29e",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 1.01,
+      "loss": 0.0
+    },
+    {
+      "id": "f27ac2c9-a789-4034-ac90-7f9b20cd5e7c",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "LDO",
+      "profit": 0.32,
+      "loss": 0.0
+    },
+    {
+      "id": "400ec2fc-87e0-42a0-8b37-f3927b570c1b",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "HK50",
+      "profit": 0.0,
+      "loss": 0.81
+    },
+    {
+      "id": "77fb8f99-db0d-4221-b750-b50488e0f33d",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 3.42
+    },
+    {
+      "id": "7dac1095-1882-43e3-b185-32e8f51d972f",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.0,
+      "loss": 3.43
+    },
+    {
+      "id": "7dc68ab5-7ab6-40d9-957e-e75c21e4caeb",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 0.87
+    },
+    {
+      "id": "1be0f38d-018b-47ac-a787-aff513e971c9",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.52
+    },
+    {
+      "id": "2bd9d43a-7f1b-4ca5-83a8-72c055479297",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "XAUT/USD",
+      "profit": 0.0,
+      "loss": 0.48
+    },
+    {
+      "id": "4b8397c6-614e-43ac-9be4-bd18959456c5",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.0,
+      "loss": 0.43
+    },
+    {
+      "id": "b4871782-343b-4af8-89a5-2bc641894d02",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 0.62
+    },
+    {
+      "id": "53c54c35-e7e8-41d1-8fcd-7aacb54867e3",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.13
+    },
+    {
+      "id": "c3ebc44a-a8ce-41d2-8f05-0428baa321eb",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.11
+    },
+    {
+      "id": "608abf09-818d-4c61-b828-2e4c0ae8cba9",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.0,
+      "loss": 0.05
+    },
+    {
+      "id": "d0ad8206-7cb1-4908-86d3-8ff802a16c2e",
+      "date": "2025-08-18",
+      "budget": null,
+      "desc": "J225",
+      "profit": 0.0,
+      "loss": 0.05
+    },
+    {
+      "id": "204d905b-955d-4667-9add-80c2b8c732ea",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.89,
+      "loss": 0.0
+    },
+    {
+      "id": "59f07fc5-0dfb-465b-a233-d2d22b0e1f4d",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.6,
+      "loss": 0.0
+    },
+    {
+      "id": "c776318a-4111-48af-b24c-82ed79c98626",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.5,
+      "loss": 0.0
+    },
+    {
+      "id": "5f36f8ee-7772-4822-b086-7b4901a70d16",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.57,
+      "loss": 0.0
+    },
+    {
+      "id": "c42d9a06-57d6-465f-9f99-104c7cd3bf81",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.12,
+      "loss": 0.0
+    },
+    {
+      "id": "8c62e8c9-049f-4ced-b161-08a5f2d27da3",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "US500",
+      "profit": 0.2,
+      "loss": 0.0
+    },
+    {
+      "id": "df0a438a-8e7c-4766-8824-cf9d567e8a35",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.64
+    },
+    {
+      "id": "24edee72-0bde-4032-ba4d-904699fd78ef",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.64
+    },
+    {
+      "id": "81136cb6-7e9b-4814-890e-70644a876054",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "US100",
+      "profit": 0.0,
+      "loss": 0.9
+    },
+    {
+      "id": "877684a1-16fb-43d0-b42c-ab177605e19b",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 0.27
+    },
+    {
+      "id": "228ae85c-b60f-47d6-b2fe-b23403c28817",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.27
+    },
+    {
+      "id": "f65b7c24-96d4-4b02-b8b3-50c7fa01a1a1",
+      "date": "2025-08-19",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 0.16
+    },
+    {
+      "id": "215af4b1-47e1-4eb3-8ff0-d64cad84011a",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 2.59,
+      "loss": 0.0
+    },
+    {
+      "id": "8f0458da-889e-49d6-8293-a33504d643d8",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 1.98,
+      "loss": 0.0
+    },
+    {
+      "id": "0fb8a863-c353-4ef9-a668-a6c941157461",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 1.98,
+      "loss": 0.0
+    },
+    {
+      "id": "d765fb66-a7c7-47fd-97d1-51d3d8fb100b",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 1.63,
+      "loss": 0.0
+    },
+    {
+      "id": "936c2d53-a280-412d-bece-288dddf48d04",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 1.5,
+      "loss": 0.0
+    },
+    {
+      "id": "5bb8b975-1256-4178-a751-dd29a868e1a3",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 1.4,
+      "loss": 0.0
+    },
+    {
+      "id": "be967ed2-66b3-4947-8f63-5092a04dba14",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "US100",
+      "profit": 1.17,
+      "loss": 0.0
+    },
+    {
+      "id": "7f9b345b-d6bc-4a4c-8b45-737bcb3bb245",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "UK100",
+      "profit": 1.17,
+      "loss": 0.0
+    },
+    {
+      "id": "e05b488c-c4a1-4ff4-93f4-4f0328b00f36",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 1.11,
+      "loss": 0.0
+    },
+    {
+      "id": "6fd18dec-a231-4fd0-8ee8-552420c6cfac",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.79,
+      "loss": 0.0
+    },
+    {
+      "id": "e8fc6c35-67c6-4360-bdde-6e281562c97e",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.4,
+      "loss": 0.0
+    },
+    {
+      "id": "ee09d31e-0fec-45cd-8651-bcd935d59e2d",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "AMZN",
+      "profit": 0.48,
+      "loss": 0.0
+    },
+    {
+      "id": "db6c3538-3128-4b1a-b813-27096183634d",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 0.4,
+      "loss": 0.0
+    },
+    {
+      "id": "b9fc20ff-d679-425b-aaea-bb1aa92a2e3c",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "FR40",
+      "profit": 0.28,
+      "loss": 0.0
+    },
+    {
+      "id": "3ca8027a-a619-443d-a945-84a1099867ce",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.16,
+      "loss": 0.0
+    },
+    {
+      "id": "631bb573-5011-477c-b449-365abe41dd8c",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "FBKit",
+      "profit": 0.3,
+      "loss": 0.0
+    },
+    {
+      "id": "48f24081-3ad3-4232-a00f-5a73ac728243",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 1.0
+    },
+    {
+      "id": "4250cdd2-700e-4991-baf1-f0297227fc06",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "TSLA",
+      "profit": 0.0,
+      "loss": 0.85
+    },
+    {
+      "id": "d1027e64-0441-4dd8-a92c-e5e0c673fd9d",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.0,
+      "loss": 0.84
+    },
+    {
+      "id": "a2945e6b-2bae-4fc4-a965-69da05cafff9",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 0.52
+    },
+    {
+      "id": "e12f08e2-25d2-428e-80ad-8ae504979f1c",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "AAPL",
+      "profit": 0.0,
+      "loss": 0.51
+    },
+    {
+      "id": "afdf0bd1-147f-48f1-b33b-fc7f04708ba4",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "UK100",
+      "profit": 0.0,
+      "loss": 0.31
+    },
+    {
+      "id": "c0a13406-a4cc-49d8-99b4-c912f004141d",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "UK100",
+      "profit": 0.0,
+      "loss": 0.27
+    },
+    {
+      "id": "16aa2382-a91b-4526-98b3-0dd6cd30543a",
+      "date": "2025-08-20",
+      "budget": null,
+      "desc": "AMZN",
+      "profit": 0.0,
+      "loss": 0.57
+    },
+    {
+      "id": "82d56ec8-336f-46ff-9296-9c6e32e8f24c",
+      "date": "2025-08-21",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.25,
+      "loss": 0.0
+    },
+    {
+      "id": "6e44c766-cbde-44fc-9deb-75a9aab0a639",
+      "date": "2025-08-21",
+      "budget": null,
+      "desc": "SQQQ",
+      "profit": 0.04,
+      "loss": 0.0
+    },
+    {
+      "id": "f193ffdb-0945-4405-8e55-c45dcaebd741",
+      "date": "2025-08-21",
+      "budget": null,
+      "desc": "IT40",
+      "profit": 0.0,
+      "loss": 1.01
+    },
+    {
+      "id": "4d2030f5-e4b8-44aa-8b2d-a175440cf327",
+      "date": "2025-08-21",
+      "budget": null,
+      "desc": "DE40",
+      "profit": 0.0,
+      "loss": 1.0
+    },
+    {
+      "id": "47e2a3ec-bc7c-4be9-8b86-fb17e8934313",
+      "date": "2025-08-21",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 0.0,
+      "loss": 1.04
+    },
+    {
+      "id": "d2561c6c-9f77-4a7e-a9e3-bc4fc948bb71",
+      "date": "2025-08-21",
+      "budget": null,
+      "desc": "Silver",
+      "profit": 0.0,
+      "loss": 0.45
+    },
+    {
+      "id": "554b99a4-8501-4eec-a6b5-b0445a36c20e",
+      "date": "2025-08-21",
+      "budget": null,
+      "desc": "META",
+      "profit": 0.0,
+      "loss": 2.93
+    },
+    {
+      "id": "84fbcbb4-2c3a-402a-a609-3a3b35eb4e14",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 13.9,
+      "loss": 0.0
+    },
+    {
+      "id": "52adeb6a-25db-4c00-8ab9-f021e1b10dc3",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "NVDA",
+      "profit": 2.16,
+      "loss": 0.0
+    },
+    {
+      "id": "7c1bbe21-684d-4b35-aa33-2cc51b9392f2",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "US500",
+      "profit": 0.06,
+      "loss": 0.0
+    },
+    {
+      "id": "e37b71bb-ffbd-4e24-9aeb-8cadf3bd98e5",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "PLTR",
+      "profit": 0.04,
+      "loss": 0.0
+    },
+    {
+      "id": "f717a5e1-12ee-47e2-ba52-d1a5f9c86e8e",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "SQQQ",
+      "profit": 0.0,
+      "loss": 6.01
+    },
+    {
+      "id": "f1d926ea-2d35-44d7-b94e-a166fbd62cc2",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "PLTR",
+      "profit": 0.0,
+      "loss": 1.54
+    },
+    {
+      "id": "7190128d-bfa6-4aaa-b96a-ff2b365ed91d",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "NDAQ",
+      "profit": 0.0,
+      "loss": 1.02
+    },
+    {
+      "id": "fb4f63d2-8f8b-4588-87a5-01753623fd7b",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "Gold",
+      "profit": 0.0,
+      "loss": 0.21
+    },
+    {
+      "id": "404da488-951a-41eb-9543-0f339f461f8c",
+      "date": "2025-08-22",
+      "budget": null,
+      "desc": "US500",
+      "profit": 0.0,
+      "loss": 0.19
+    }
+  ]
+}
