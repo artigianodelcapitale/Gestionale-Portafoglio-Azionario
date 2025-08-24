@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestionale Portafoglio – Capital.com</title>
+<style>
+  :root{
+    --bg:#0f1220; --card:#161a2b; --muted:#8b91a7; --text:#e8eaf6;
+    --accent:#5dd6b0; --accent2:#8bb4ff; --danger:#ff6b6b; --warn:#ffc260;
+    --good:#31d0aa;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif}
+  h1,h2,h3{margin:0 0 .6rem 0}
+  h1{font-size:1.4rem}
+  h2{font-size:1.1rem;color:#cfd3ea}
+  p{color:var(--muted);margin:.2rem 0 .8rem}
+  .wrap{max-width:1100px;margin:auto;padding:16px}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
+  .card{background:var(--card);border-radius:var(--radius);padding:14px;border:1px solid rgba(255,255,255,.06);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  label{display:block;font-size:.88rem;color:#b5b8cd;margin:.3rem 0 .25rem}
+  input,select,textarea,button{
+    width:100%;padding:12px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.08);
+    background:#101428;color:var(--text);font-size:1rem;outline:none
+  }
+  input[type="date"]{padding:9px 10px}
+  textarea{min-height:72px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:640px){.row.two{grid-template-columns:repeat(2,1fr)} .row.three{grid-template-columns:repeat(3,1fr)} .row.four{grid-template-columns:repeat(4,1fr)}}
+  .btn{cursor:pointer;font-weight:600}
+  .btn.primary{background:linear-gradient(120deg,var(--accent),var(--accent2));color:#0b1220;border:none}
+  .btn.ghost{background:transparent;border:1px dashed rgba(255,255,255,.18)}
+  .btn.danger{background:transparent;border:1px solid rgba(255,0,0,.3);color:#ffb3b3}
+  .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media(min-width:520px){.kpis{grid-template-columns:repeat(4,1fr)}}
+  .kpi{background:#101428;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:12px}
+  .kpi small{display:block;color:#9aa0b8}
+  .kpi strong{font-size:1.2rem}
+  .bar{height:10px;background:rgba(255,255,255,.07);border-radius:40px;overflow:hidden;margin-top:8px}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,.07);text-align:left;font-size:.95rem}
+  th{color:#bfc5df;font-weight:600}
+  tr:hover td{background:rgba(255,255,255,.02)}
+  .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#0d1428;border:1px solid rgba(255,255,255,.08);font-size:.8rem;color:#c7cbe0}
+  .profit{color:var(--good)}
+  .loss{color:var(--danger)}
+  .muted{color:var(--muted)}
+  .sticky{position:sticky;top:0;background:var(--card);z-index:10}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .footer{opacity:.8;margin-top:14px;font-size:.9rem}
+  .sep{height:1px;background:rgba(255,255,255,.08);margin:8px 0 12px}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:#0e1730;border:1px solid rgba(255,255,255,.08);padding:8px 10px;border-radius:999px;color:#cdd4f3}
+  .pill input{width:auto;border:none;background:transparent;padding:0;margin:0;min-width:60px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📈 Gestionale Portafoglio – Capital.com</h1>
+  <p>Traccia giornalmente ogni <em>operazione</em> con: data, budget, operazione eseguita, profitto, perdita. Obiettivo giornaliero: <strong>+2%</strong> sul budget iniziale. Obiettivo finale: <strong>2.750€</strong>.</p>
+
+  <div class="grid">
+    <!-- LEFT -->
+    <div class="card">
+      <h2>Impostazioni</h2>
+      <div class="row two">
+        <div>
+          <label>Budget iniziale (€)</label>
+          <input id="initialBudget" type="number" step="0.01" placeholder="es. 100.00">
+        </div>
+        <div>
+          <label>Obiettivo finale (€)</label>
+          <input id="finalGoal" type="number" step="1" placeholder="2750">
+        </div>
+      </div>
+      <div class="row two" style="margin-top:8px">
+        <div class="pill">
+          🎯 Obiettivo giornaliero (2%): <strong id="dailyTargetLabel">—</strong>
+        </div>
+        <button class="btn" onclick="resetData()">Reimposta dati</button>
+      </div>
+      <div class="sep"></div>
+
+      <h2>Nuova operazione</h2>
+      <div class="row two">
+        <div>
+          <label>Data</label>
+          <input id="opDate" type="date">
+        </div>
+        <div>
+          <label>Budget (€. opzionale)</label>
+          <input id="opBudget" type="number" step="0.01" placeholder="es. 100.00">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Operazione eseguita (es. “BUY NVDA 1 @ 126.50 – CLOSE 127.30”)</label>
+          <textarea id="opDesc" placeholder="Dettagli liberi dell'operazione..."></textarea>
+        </div>
+      </div>
+      <div class="row three">
+        <div>
+          <label>Profitto (€)</label>
+          <input id="opProfit" type="number" step="0.01" placeholder="0.00">
+        </div>
+        <div>
+          <label>Perdita (€)</label>
+          <input id="opLoss" type="number" step="0.01" placeholder="0.00">
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button class="btn primary" onclick="addOperation()">+ Aggiungi operazione</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="card">
+      <h2>Riepilogo giornaliero</h2>
+      <div class="row two">
+        <div>
+          <label>Filtra per data</label>
+          <input id="filterDate" type="date">
+        </div>
+        <div class="actions" style="align-items:end">
+          <button class="btn ghost" onclick="clearFilter()">Mostra tutto</button>
+        </div>
+      </div>
+
+      <div class="kpis" style="margin-top:12px">
+        <div class="kpi">
+          <small>Obiettivo finale</small>
+          <strong id="goalVal">€ 2.750,00</strong>
+          <div class="bar"><i id="goalBar" style="width:0%"></i></div>
+          <small class="muted">Progresso verso l'obiettivo</small>
+        </div>
+        <div class="kpi">
+          <small>Profitto totale</small>
+          <strong class="profit" id="totalProfit">€ 0,00</strong>
+          <small class="muted">Somma di tutti i profitti</small>
+        </div>
+        <div class="kpi">
+          <small>Perdita totale</small>
+          <strong class="loss" id="totalLoss">€ 0,00</strong>
+          <small class="muted">Somma di tutte le perdite</small>
+        </div>
+        <div class="kpi">
+          <small>Saldo selezione</small>
+          <strong id="netResult">€ 0,00</strong>
+          <small class="muted">Profitto - Perdita</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="actions" style="justify-content:space-between;align-items:center">
+      <h2>Operazioni</h2>
+      <div class="actions">
+        <button class="btn ghost" onclick="exportJSON()">Esporta JSON</button>
+        <button class="btn ghost" onclick="exportCSV()">Esporta CSV</button>
+        <label class="pill" style="cursor:pointer">
+          📥 Importa JSON
+          <input id="importFile" type="file" accept="application/json" style="display:none" onchange="importJSON(this.files[0])">
+        </label>
+      </div>
+    </div>
+    <div id="opsContainer"></div>
+  </div>
+
+  <div class="footer">
+    Suggerimento: salva questo file in iCloud Drive / File e aprilo con Safari o Chrome su iPhone, iPad e Mac. I dati restano sul dispositivo (localStorage). Usa <em>Esporta JSON</em> per sincronizzare manualmente tra dispositivi e <em>Importa JSON</em> per caricare.
+  </div>
+</div>
+
+<script>
+const LS_KEY = "gestionale_portafoglio_v1";
+function todayISO(){ const d=new Date(); const tz = new Date().getTimezoneOffset()*60000; return new Date(Date.now()-tz).toISOString().slice(0,10); }
+
+let state = {
+  initialBudget: null,
+  finalGoal: 2750,
+  trades: [] // {id, date:'YYYY-MM-DD', budget: number|null, desc, profit, loss}
+};
+
+function load(){
+  try{
+    const raw = localStorage.getItem(LS_KEY);
+    if(raw){ state = JSON.parse(raw); }
+  }catch(e){ console.warn(e); }
+  // bind inputs
+  document.getElementById('initialBudget').value = state.initialBudget ?? "";
+  document.getElementById('finalGoal').value = state.finalGoal;
+  document.getElementById('opDate').value = todayISO();
+  document.getElementById('filterDate').value = "";
+  updateDailyTarget();
+  render();
+}
+function save(){ localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+
+function formatEUR(n){
+  if (n === null || typeof n === "undefined" || isNaN(n)) n = 0;
+  return n.toLocaleString('it-IT',{style:'currency',currency:'EUR'});
+}
+
+function parseNum(v){
+  if(v===null || v===undefined || v==="") return 0;
+  const n = Number(v);
+  return isNaN(n) ? 0 : n;
+}
+
+function updateDailyTarget(){
+  const ib = parseNum(document.getElementById('initialBudget').value);
+  const goal = parseNum(document.getElementById('finalGoal').value) || 2750;
+  state.initialBudget = ib || null;
+  state.finalGoal = goal;
+  save();
+  const daily = ib ? ib*0.02 : 0;
+  document.getElementById('dailyTargetLabel').textContent = ib ? formatEUR(daily) : "—";
+  document.getElementById('goalVal').textContent = formatEUR(goal);
+  renderKpis();
+}
+
+document.getElementById('initialBudget').addEventListener('input', updateDailyTarget);
+document.getElementById('finalGoal').addEventListener('input', updateDailyTarget);
+
+function addOperation(){
+  const date = document.getElementById('opDate').value || todayISO();
+  const budget = document.getElementById('opBudget').value;
+  const desc = (document.getElementById('opDesc').value || "").trim();
+  const profit = parseNum(document.getElementById('opProfit').value);
+  const loss = parseNum(document.getElementById('opLoss').value);
+
+  if (!desc && profit===0 && loss===0){
+    alert("Inserisci almeno la descrizione o un importo di profitto/perdita.");
+    return;
+  }
+
+  const op = {
+    id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now())+Math.random(),
+    date,
+    budget: budget==="" ? null : parseNum(budget),
+    desc,
+    profit, loss
+  };
+  state.trades.push(op);
+  save();
+  // reset inputs (keep date)
+  document.getElementById('opBudget').value = "";
+  document.getElementById('opDesc').value = "";
+  document.getElementById('opProfit').value = "";
+  document.getElementById('opLoss').value = "";
+  render();
+}
+
+function deleteOp(id){
+  if(!confirm("Eliminare questa operazione?")) return;
+  state.trades = state.trades.filter(t=>t.id!==id);
+  save(); render();
+}
+
+function editOp(id){
+  const t = state.trades.find(x=>x.id===id);
+  if(!t) return;
+  const desc = prompt("Modifica descrizione:", t.desc ?? "");
+  if(desc===null) return;
+  const profit = prompt("Modifica profitto (€):", t.profit ?? 0);
+  if(profit===null) return;
+  const loss = prompt("Modifica perdita (€):", t.loss ?? 0);
+  if(loss===null) return;
+  t.desc = desc.trim();
+  t.profit = parseNum(profit);
+  t.loss = parseNum(loss);
+  save(); render();
+}
+
+function clearFilter(){ document.getElementById('filterDate').value=""; render(); }
+document.getElementById('filterDate').addEventListener('input', render);
+
+function render(){
+  renderTable();
+  renderKpis();
+}
+
+function renderKpis(){
+  const filterDate = document.getElementById('filterDate').value;
+  const arr = filterDate ? state.trades.filter(t=>t.date===filterDate) : state.trades.slice();
+  let profit = 0, loss = 0;
+  arr.forEach(t=>{ profit += parseNum(t.profit); loss += parseNum(t.loss); });
+  const net = profit - loss;
+
+  document.getElementById('totalProfit').textContent = formatEUR(profit);
+  document.getElementById('totalLoss').textContent = formatEUR(loss);
+  const netEl = document.getElementById('netResult');
+  netEl.textContent = formatEUR(net);
+  netEl.className = (net>=0) ? 'profit' : 'loss';
+
+  const goal = state.finalGoal || 2750;
+  const progress = Math.max(0, Math.min(100, goal ? (Math.max(0, profit - loss) / goal)*100 : 0));
+  document.getElementById('goalBar').style.width = progress.toFixed(1) + '%';
+
+  const ib = state.initialBudget || 0;
+  const dailyTarget = ib * 0.02;
+  const arrToday = filterDate ? arr : state.trades.filter(t=>t.date===todayISO());
+  let todayNet = 0; arrToday.forEach(t=>{ todayNet += parseNum(t.profit) - parseNum(t.loss); });
+  const dailyLabel = document.getElementById('dailyTargetLabel');
+  if (ib){
+    const hit = todayNet >= dailyTarget;
+    dailyLabel.innerHTML = formatEUR(dailyTarget) + (filterDate? "":" ") + (hit ? ' ✅' : ' ❌');
+  }
+}
+
+function renderTable(){
+  const filterDate = document.getElementById('filterDate').value;
+  const container = document.getElementById('opsContainer');
+  if(state.trades.length===0){
+    container.innerHTML = '<p class="muted">Nessuna operazione ancora. Aggiungi la prima dal pannello in alto.</p>';
+    return;
+  }
+  // group by date
+  const map = {};
+  state.trades
+    .slice()
+    .sort((a,b)=> a.date===b.date ? 0 : (a.date<b.date?-1:1))
+    .forEach(t=>{
+      if(filterDate && t.date!==filterDate) return;
+      (map[t.date] = map[t.date] || []).push(t);
+    });
+  const dates = Object.keys(map).sort();
+  let html = '';
+  dates.forEach(d=>{
+    const arr = map[d];
+    let p=0,l=0;
+    arr.forEach(t=>{ p+=parseNum(t.profit); l+=parseNum(t.loss); });
+    html += `
+      <div class="sticky" style="padding:6px 6px 0">
+        <div class="actions" style="justify-content:space-between;align-items:center">
+          <div class="pill">📅 <strong style="margin-left:6px">${d}</strong></div>
+          <div class="pill">Totale giorno: <span class="profit" style="margin-left:6px">${formatEUR(p-l)}</span></div>
+          <div class="pill">Profitto: <span class="profit" style="margin-left:6px">${formatEUR(p)}</span></div>
+          <div class="pill">Perdita: <span class="loss" style="margin-left:6px">${formatEUR(l)}</span></div>
+        </div>
+      </div>
+      <div style="overflow:auto;border-radius:12px;border:1px solid rgba(255,255,255,.06);margin-top:8px;margin-bottom:16px">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:120px">Data</th>
+            <th style="min-width:120px">Budget</th>
+            <th>Operazione eseguita</th>
+            <th style="min-width:120px">Profitto</th>
+            <th style="min-width:120px">Perdita</th>
+            <th style="min-width:140px">Azioni</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+    arr.forEach(t=>{
+      html += `
+        <tr>
+          <td>${t.date}</td>
+          <td>${t.budget===null||t.budget===undefined?'<span class="muted">—</span>':formatEUR(parseNum(t.budget))}</td>
+          <td>${(t.desc||'').replace(/</g,'&lt;')}</td>
+          <td class="profit">${formatEUR(parseNum(t.profit))}</td>
+          <td class="loss">${formatEUR(parseNum(t.loss))}</td>
+          <td>
+            <div class="actions">
+              <button class="btn ghost" onclick="editOp('${t.id}')">Modifica</button>
+              <button class="btn danger" onclick="deleteOp('${t.id}')">Elimina</button>
+            </div>
+          </td>
+        </tr>
+      `;
+    });
+    html += `</tbody></table></div>`;
+  });
+  container.innerHTML = html;
+}
+
+function exportJSON(){
+  const data = JSON.stringify(state, null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'gestionale_portafoglio.json';
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(url);
+  a.remove();
+}
+
+function exportCSV(){
+  // CSV with columns: date,budget,desc,profit,loss
+  const rows = [["data","budget","operazione","profitto","perdita"]]
+    .concat(state.trades.map(t=>[
+      t.date,
+      (t.budget===null||t.budget===undefined) ? "" : String(parseNum(t.budget)).replace('.',','),
+      (t.desc||"").replace(/(\r\n|\n|\r)/gm,' ').replace(/"/g,'""'),
+      String(parseNum(t.profit)).replace('.',','),
+      String(parseNum(t.loss)).replace('.',',')
+    ]));
+  const csv = rows.map(r=>{
+    return r.map(v=>{
+      const s = String(v);
+      return /[,";\n]/.test(s) ? `"${s}"` : s;
+    }).join(';');
+  }).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'operazioni.csv';
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(url);
+  a.remove();
+}
+
+function importJSON(file){
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = (e)=>{
+    try{
+      const obj = JSON.parse(e.target.result);
+      if(!obj || typeof obj!=='object' || !Array.isArray(obj.trades)){
+        alert("File non valido.");
+        return;
+      }
+      state = {
+        initialBudget: obj.initialBudget ?? null,
+        finalGoal: obj.finalGoal ?? 2750,
+        trades: obj.trades.map(t=>({
+          id: t.id ?? (crypto.randomUUID ? crypto.randomUUID() : String(Date.now())+Math.random()),
+          date: t.date ?? todayISO(),
+          budget: (t.budget===null||t.budget===undefined) ? null : parseNum(t.budget),
+          desc: t.desc ?? "",
+          profit: parseNum(t.profit),
+          loss: parseNum(t.loss)
+        }))
+      };
+      save(); load();
+      alert("Dati importati con successo!");
+    }catch(err){
+      console.error(err);
+      alert("Errore durante l'importazione.");
+    }
+  };
+  reader.readAsText(file);
+}
+
+function resetData(){
+  if(!confirm("Questo cancellerà tutte le operazioni presenti su questo dispositivo. Procedere?")) return;
+  state = { initialBudget: null, finalGoal: 2750, trades: [] };
+  save(); load();
+}
+
+load();
+</script>
+</body>
+</html>
