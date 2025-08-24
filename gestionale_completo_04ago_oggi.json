@@ -1,0 +1,49 @@
+{
+  "initialBudget": 66.1,
+  "finalGoal": 2750,
+  "dailyTarget": 1.32,
+  "period": {
+    "from": "2025-08-04",
+    "to": "2025-08-24"
+  },
+  "trades": [
+    {
+      "id": "184c8de3-a5ff-4dc2-add8-faa0f28cd741",
+      "date": "2025-08-23",
+      "budget": null,
+      "desc": "SOL/USD",
+      "profit": 0.0,
+      "loss": 1.18
+    },
+    {
+      "id": "8143feec-f793-4334-812e-098f21415a35",
+      "date": "2025-08-24",
+      "budget": null,
+      "desc": "ETH/USD",
+      "profit": 1.7,
+      "loss": 0.0
+    }
+  ],
+  "dailySummary": [
+    {
+      "date": "2025-08-23",
+      "profit": 0.0,
+      "loss": 1.18,
+      "net": -1.18,
+      "dailyTarget": 1.32,
+      "hitTarget": false,
+      "equityAfterDay": 64.92,
+      "tradesCount": 1
+    },
+    {
+      "date": "2025-08-24",
+      "profit": 1.7,
+      "loss": 0.0,
+      "net": 1.7,
+      "dailyTarget": 1.32,
+      "hitTarget": true,
+      "equityAfterDay": 66.62,
+      "tradesCount": 1
+    }
+  ]
+}

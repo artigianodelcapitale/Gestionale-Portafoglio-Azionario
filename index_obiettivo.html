@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestionale – Obiettivo Giornaliero</title>
+<style>
+  :root{--bg:#0f1117;--card:#151a22;--muted:#93a4bf;--line:#263243;--pos:#5ee1a4;--neg:#ff7b7b;--accent:#66a3ff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#eaf1ff}
+  .wrap{max-width:1120px;margin:0 auto;padding:18px 16px}
+  h1{font-size:20px;margin:0 0 6px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .k{font-size:13px;color:var(--muted);margin-bottom:6px}
+  .v{font-size:18px}
+  .v.pos{color:var(--pos)} .v.neg{color:var(--neg)}
+  table{width:100%;border-collapse:collapse}
+  th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;font-size:14px}
+  th{color:var(--muted)}
+  .ok{color:var(--pos);font-weight:600}
+  .ko{color:var(--neg);font-weight:600}
+  .muted{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📊 Gestionale – Riepilogo e Obiettivi</h1>
+  <div class="grid">
+    <div class="card"><div class="k">Budget iniziale</div><div class="v" id="init">—</div></div>
+    <div class="card"><div class="k">Obiettivo giornaliero (2%)</div><div class="v" id="goalDay">—</div></div>
+    <div class="card"><div class="k">Obiettivo finale</div><div class="v" id="goal">—</div></div>
+    <div class="card"><div class="k">Periodo</div><div class="v" id="period">—</div></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <strong>Riepilogo per giorno (target 2%)</strong>
+    <div class="muted" style="margin:6px 0">✅ = netto ≥ obiettivo giornaliero | ❌ = sotto target</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th style="color:var(--pos)">Profitto</th>
+          <th style="color:var(--neg)">Perdita</th>
+          <th>Netto</th>
+          <th>Target</th>
+          <th>Esito</th>
+          <th>Equity fine giornata</th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+function euro(n){ return '€ ' + Number(n||0).toFixed(2); }
+async function load(){
+  const url = new URL(window.location.href);
+  const jsonURL = url.origin + url.pathname.replace(/\/[^\/]*$/, '/') + 'gestionale_completo_04ago_oggi.json';
+  const r = await fetch(jsonURL, {cache:'no-store'});
+  const data = await r.json();
+
+  document.getElementById('init').textContent = euro(data.initialBudget);
+  document.getElementById('goalDay').textContent = euro(data.dailyTarget);
+  document.getElementById('goal').textContent = '€ ' + (data.finalGoal||2750);
+  document.getElementById('period').textContent = (data.period?.from||'—') + ' → ' + (data.period?.to||'—');
+
+  const tb = document.getElementById('tb');
+  tb.innerHTML = '';
+  (data.dailySummary||[]).forEach(d=>{
+    const tr = document.createElement('tr');
+    const ok = d.hitTarget;
+    tr.innerHTML = `<td>${d.date}</td>
+      <td style="color:#5ee1a4">${euro(d.profit)}</td>
+      <td style="color:#ff7b7b">${euro(d.loss)}</td>
+      <td>${euro(d.net)}</td>
+      <td>${euro(d.dailyTarget)}</td>
+      <td>${ok?'<span class="ok">✅</span>':'<span class="ko">❌</span>'}</td>
+      <td>${euro(d.equityAfterDay)}</td>`;
+    tb.appendChild(tr);
+  });
+}
+load();
+</script>
+</body>
+</html>
